@@ -12,7 +12,8 @@
       "src": "毕设后台/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "毕设后台/dist"
+        "distDir": "毕设后台/dist",
+        "buildCommand": "cd 毕设后台 && npm install && npm run build"
       }
     },
     {
