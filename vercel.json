@@ -2,51 +2,51 @@
   "version": 2,
   "builds": [
     {
-      "src": "毕设前台/package.json",
+      "src": "web/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "毕设前台/dist",
-        "buildCommand": "cd ./毕设前台 && npm install && npm run build"
+        "distDir": "web/dist",
+        "buildCommand": "cd ./web && npm install && npm run build"
       }
     },
     {
-      "src": "毕设后台/package.json",
+      "src": "admin/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "毕设后台/dist",
-        "buildCommand": "cd ./毕设后台 && npm install && npm run build"
+        "distDir": "admin/dist",
+        "buildCommand": "cd ./admin && npm install && npm run build"
       }
     },
     {
-      "src": "毕设后端接口/app.js",
+      "src": "api/app.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/",
-      "dest": "毕设前台/dist/index.html"
+      "dest": "web/dist/index.html"
     },
     {
       "src": "/assets/(.*)",
-      "dest": "毕设前台/dist/assets/$1"
+      "dest": "web/dist/assets/$1"
     },
     {
       "src": "/admin(/?.*)",
-      "dest": "毕设后台/dist/index.html"
+      "dest": "admin/dist/index.html"
     },
     {
       "src": "/admin/assets/(.*)",
-      "dest": "毕设后台/dist/assets/$1"
+      "dest": "admin/dist/assets/$1"
     },
     {
       "src": "/api/(.*)",
-      "dest": "毕设后端接口/app.js"
+      "dest": "api/app.js"
     },
     {
       "src": "/(.*)",
       "status": 404,
-      "dest": "毕设前台/dist/404.html"
+      "dest": "web/dist/404.html"
     }
   ]
 }
