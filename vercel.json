@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "毕设前台/vue.config.js",
+      "use": "@vercel/static",
+      "config": {
+        "distDir": ".vercel/output/static-site"
+      }
+    },
+    {
+      "src": "毕设后台/vue.config.js",
+      "use": "@vercel/static",
+      "config": {
+        "distDir": ".vercel/output/frontend-admin"
+      }
+    },
+    {
+      "src": "毕设后端接口/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": ".vercel/output/static-site/index.html"
+    },
+    {
+      "src": "/admin",
+      "dest": ".vercel/output/frontend-admin/index.html",
+      "rewrite": "/admin/:path*"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "毕设后端接口/app.js"
+    }
+  ]
+}

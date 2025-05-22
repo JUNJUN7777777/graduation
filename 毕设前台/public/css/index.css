@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+.container.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container .w {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.container img {
+  vertical-align: middle;
+  border: none;
+  width: 100%;
+}
+
+.pic-scale {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pic-scale img {
+  transition: all .5s;
+}
+
+.pic-scale:hover img {
+  transform: scale(1.08);
+  transition: all .5s;
+}
+
+
+.clearfix:after {
+  /*伪元素是行内元素 正常浏览器清除浮动方法*/
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+  /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+}
+
+/* 标题 */
+.news {
+  padding: 20px 0;
+}
+
+.news>p>span {
+  display: inline-block;
+  height: 30px;
+  width: 5px;
+  background: #75AC47;
+  position: relative;
+  top: 2px;
+  margin-right: 15px;
+  left: -1px;
+}
+
+.news>p {
+  font-size: 23px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
