@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "毕设前台/vue.config.js",
-      "use": "@vercel/static",
+      "src": "毕设前台/package.json",
+      "use": "@vercel/static-build",
       "config": {
-        "distDir": ".vercel/output/static-site"
+        "distDir": "毕设前台/dist"
       }
     },
     {
-      "src": "毕设后台/vue.config.js",
-      "use": "@vercel/static",
+      "src": "毕设后台/package.json",
+      "use": "@vercel/static-build",
       "config": {
-        "distDir": ".vercel/output/frontend-admin"
+        "distDir": "毕设后台/dist"
       }
     },
     {
@@ -23,16 +23,28 @@
   "routes": [
     {
       "src": "/",
-      "dest": ".vercel/output/static-site/index.html"
+      "dest": "毕设前台/dist/index.html"
     },
     {
-      "src": "/admin",
-      "dest": ".vercel/output/frontend-admin/index.html",
-      "rewrite": "/admin/:path*"
+      "src": "/assets/(.*)",
+      "dest": "毕设前台/dist/assets/$1"
+    },
+    {
+      "src": "/admin(/?.*)",
+      "dest": "毕设后台/dist/index.html"
+    },
+    {
+      "src": "/admin/assets/(.*)",
+      "dest": "毕设后台/dist/assets/$1"
     },
     {
       "src": "/api/(.*)",
       "dest": "毕设后端接口/app.js"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "毕设前台/dist/404.html"
     }
   ]
 }
