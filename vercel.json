@@ -1,17 +1,21 @@
 {
   "version": 2,
-  "projects": [
+  "builds": [
     {
       "src": "web/package.json",
       "use": "@vercel/static-build",
-      "buildCommand": "npm install && npm run build",
-      "outputDirectory": "web/dist"
+      "config": {
+        "buildCommand": "npm run build",
+        "distDir": "dist"
+      }
     },
     {
       "src": "admin/package.json",
       "use": "@vercel/static-build",
-      "buildCommand": "npm install && npm run build",
-      "outputDirectory": "admin/dist"
+      "config": {
+        "buildCommand": "npm run build",
+        "distDir": "dist"
+      }
     },
     {
       "src": "api/app.js",
