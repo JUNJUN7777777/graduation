@@ -28,7 +28,11 @@
       "dest": "api/app.js"
     },
     {
-      "src": "/admin(/?.*)",
+      "src": "/admin",
+      "dest": "admin/dist/index.html"
+    },
+    {
+      "src": "/admin/(.*)",
       "dest": "admin/dist/index.html"
     },
     {
@@ -36,12 +40,8 @@
       "dest": "web/dist/index.html"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
-      "status": 404,
-      "dest": "web/dist/404.html"
+      "dest": "web/dist/index.html"
     }
   ]
 }

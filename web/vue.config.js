@@ -2,6 +2,8 @@ const { defineConfig } = require('@vue/cli-service')
 var webpack = require('webpack');
 
 module.exports = defineConfig({
+  publicPath: '/',
+  outputDir: 'dist',
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
