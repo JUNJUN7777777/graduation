@@ -28,15 +28,15 @@
       "dest": "api/app.js"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/admin(/?.*)",
       "dest": "admin/dist/index.html"
     },
     {
       "src": "/",
       "dest": "web/dist/index.html"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
