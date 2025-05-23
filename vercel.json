@@ -5,16 +5,16 @@
       "src": "web/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "npm run build",
-        "distDir": "dist"
+        "buildCommand": "cd web && npm ci && npm run build",
+        "distDir": "web/dist"
       }
     },
     {
       "src": "admin/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "npm run build",
-        "distDir": "dist"
+        "buildCommand": "cd admin && npm ci && npm run build",
+        "distDir": "admin/dist"
       }
     },
     {
@@ -24,16 +24,19 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "web/dist/index.html"
+      "src": "/api/(.*)",
+      "dest": "api/app.js"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/admin(/?.*)",
       "dest": "admin/dist/index.html"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "api/app.js"
+      "src": "/",
+      "dest": "web/dist/index.html"
     },
     {
       "src": "/(.*)",
