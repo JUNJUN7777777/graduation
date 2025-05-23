@@ -103,6 +103,8 @@ function getData(data) {
     // console.log(arr)
 }
 
-// app.listen(595, () => {
-//     console.log('端口信息http://127.0.0.1')
-// })
+app.listen(595, () => {
+    console.log('端口信息http://127.0.0.1')
+})
+
+// module.exports = app;
