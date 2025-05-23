@@ -22,26 +22,26 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/app.js"
+      "source": "/api/(.*)",
+      "destination": "/api/app.js"
     },
     {
-      "src": "/admin",
-      "dest": "admin/dist/index.html"
+      "source": "/admin",
+      "destination": "/admin/dist/index.html"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "admin/dist/index.html"
+      "source": "/admin/(.*)",
+      "destination": "/admin/dist/index.html"
     },
     {
-      "src": "/",
-      "dest": "web/dist/index.html"
+      "source": "/",
+      "destination": "/web/dist/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "web/dist/index.html"
+      "source": "/(.*)",
+      "destination": "/web/dist/index.html"
     }
   ]
 }
