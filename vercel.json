@@ -5,16 +5,16 @@
       "src": "web/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "cd web && npm ci && npm run build",
-        "distDir": "web/dist"
+        "buildCommand": "npm ci && npm run build",
+        "distDir": "dist"
       }
     },
     {
       "src": "admin/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "cd admin && npm ci && npm run build",
-        "distDir": "admin/dist"
+        "buildCommand": "npm ci && npm run build",
+        "distDir": "dist"
       }
     },
     {
