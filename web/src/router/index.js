@@ -14,6 +14,7 @@ VueRouter.prototype.push = function (location, resolve, reject) {
 }
 
 let router = new VueRouter({
+    mode: 'history',
     routes,
     scrollBehavior(to, from, savePosition) {
         return { y: 0 }
